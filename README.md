@@ -2,7 +2,7 @@
 
 ## Author
 
-
+Skylar Peters
 
 ## Description
 
@@ -93,11 +93,14 @@ Be sure to think about what the time complexity for the bucket sort will be. Thi
 
 ## Outside Resources Used
 
-
+I used the visualizations from class when creating the merge sort. 
+I also used the IComparable Infterface link you provided us to help me create the CompareTo method.
 
 ## Known Problems, Issues, And/Or Errors in the Program
 
-
+At the start of the merge sort, I used .Length - 93 instead of - 1 because I couldn't find a way to ignore the null values in the array. 
+Doing this fixed a problem where, when sorting based on type after sorting based on total cost, the printed array would show double the amount of droids, one set of 8 for both sorts.
+However, this fix causes a problem where any droids the user creates are not sorted based on total cost.
 
 ## Assignment 3 Description for reference
 

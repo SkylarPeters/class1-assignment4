@@ -35,8 +35,8 @@ namespace cis237_assignment4
                     a[k] = aux[i++];
                 }
                 // If first element is null it wont compare
-                else if ((aux[j] == null) || (aux[j].CompareTo(aux[i]) < 0))
-                {  // compare
+                else if (aux[j].CompareTo(aux[i]) < 0)
+                {
                     a[k] = aux[j++];
                 }
                 else
@@ -50,7 +50,8 @@ namespace cis237_assignment4
         public static void Sort(IComparable[] a)
         {
             IComparable[] aux = new IComparable[a.Length];
-            sort(a, aux, 0, a.Length - 1);
+            // Temporary fix for null values, not good when creating new droids
+            sort(a, aux, 0, a.Length - 93);
         }
 
         // mergesort a[lo..hi] using auxiliary array aux[lo..hi]
