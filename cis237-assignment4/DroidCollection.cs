@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Skylar Peters
+// CIS 237
+// 3/22/2021
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -31,7 +35,7 @@ namespace cis237_assignment4
             droidCollection[7] = new AstromechDroid("Tears Of A Jedi", "White", true, false, true, false, 3);
         }
 
-        public DroidCollection() { }
+        //public DroidCollection() { }
 
         // The Add method for a Protocol Droid. The parameters passed in match those needed for a protocol droid
         public bool Add(string Material, string Color, int NumberOfLanguages)
@@ -136,36 +140,73 @@ namespace cis237_assignment4
         public void CategorySort()
         {
             // Create instances of the generic stack class for each type of droid
-            GenericStack<ProtocolDroid> protocolStack = new GenericStack<ProtocolDroid>();
-            GenericStack<UtilityDroid> utilityStack = new GenericStack<UtilityDroid>();
-            GenericStack<JanitorDroid> janitorStack = new GenericStack<JanitorDroid>();
-            GenericStack<AstromechDroid> astromechStack = new GenericStack<AstromechDroid>();
+            GenericStack<IDroid> protocolStack = new GenericStack<IDroid>();
+            GenericStack<IDroid> utilityStack = new GenericStack<IDroid>();
+            GenericStack<IDroid> janitorStack = new GenericStack<IDroid>();
+            GenericStack<IDroid> astromechStack = new GenericStack<IDroid>();
 
             // Create an instance of the generic queue class
             GenericQueue<IDroid> droidQueue = new GenericQueue<IDroid>();
 
+            // Put each element from the array into a stack
             foreach (IDroid droid in droidCollection)
+            { 
+                // Null elements are not used
+                if (droid != null)
+                {
+                    switch (droid.GetType().Name.ToString())
+                    {
+                        // Protocol stack
+                        case "ProtocolDroid":
+                            protocolStack.Push(droid);
+                            break;
+                        // Astromech stack
+                        case "AstromechDroid":
+                            astromechStack.Push(droid);
+                            break;
+                        // Janitor stack
+                        case "JanitorDroid":
+                            janitorStack.Push(droid);
+                            break;
+                        // Utility stack
+                        case "UtilityDroid":
+                            utilityStack.Push(droid);
+                            break;
+                    }
+                }
+            }
+
+            // Empty the astromech stack into the queue
+            while (astromechStack.IsEmpty != true)
             {
-                //if (droid.GetType() == typeof(ProtocolDroid))
-                //{
-                //    protocolStack.Push(droid);
-                //}
+                droidQueue.Enqueue(astromechStack.Pop());
+            }
 
-                //switch (droid.GetType())
-                //{
-                //    case typeof(ProtocolDroid):
-                //        //protocolStack.Push(droid.GetType());
-                //        break;
-                //    case "AstromechDroid":
+            // Empty the janitor stack into the queue
+            while (janitorStack.IsEmpty != true)
+            {
+                droidQueue.Enqueue(janitorStack.Pop());
+            }
 
-                //        break;
-                //    case "JanitorDroid":
+            // Empty the utility stack into the queue
+            while (utilityStack.IsEmpty != true)
+            {
+                droidQueue.Enqueue(utilityStack.Pop());
+            }
 
-                //        break;
-                //    case "UtilityDroid":
+            // Empty the protocol stack into the queue
+            while (protocolStack.IsEmpty != true)
+            {
+                droidQueue.Enqueue(protocolStack.Pop());
+            }
 
-                //        break;
-                //}
+            // Replace the droid collection array elements with the droid queue
+            for (int i = 0; i < droidCollection.Length; i++)
+            {
+                if (droidQueue.IsEmpty != true)
+                {
+                    droidCollection[i] = droidQueue.Dequeue();
+                }
             }
         }
 

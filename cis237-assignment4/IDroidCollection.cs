@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Skylar Peters
+// CIS 237
+// 3/22/2021
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -15,6 +19,10 @@ namespace cis237_assignment4
         // Method to get the data for a droid into a nicely formated string that can be output.
         string GetPrintString();
 
+        // Method to sort the droid array based on total cost.
         void TotalCostSort();
+
+        // Method to sort the droid array based on droid type.
+        void CategorySort();
     }
 }

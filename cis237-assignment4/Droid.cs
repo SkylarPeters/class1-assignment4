@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Skylar Peters
+// CIS 237
+// 3/22/2021
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -142,9 +146,13 @@ namespace cis237_assignment4
                 return 1;
             }
 
+            // Get second element
             Droid otherDroid = obj as Droid;
+
+            // Go on to compare if second element is not null
             if (otherDroid != null)
             {
+                // Calculate total cost for both elements and compare them
                 otherDroid.CalculateTotalCost();
                 this.CalculateTotalCost();
                 return totalCost.CompareTo(otherDroid.totalCost);

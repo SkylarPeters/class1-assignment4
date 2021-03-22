@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Skylar Peters
+// CIS 237
+// 3/22/2021
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -28,8 +32,9 @@ namespace cis237_assignment4
             Console.WriteLine("What would you like to do?");
             Console.WriteLine("1. Add a new droid to the system");
             Console.WriteLine("2. Print the list of droids out");
-            Console.WriteLine("3. Sort the droids based on total cost");
-            Console.WriteLine("4. Exit the program");
+            Console.WriteLine("3. Sort the droids based on their type");
+            Console.WriteLine("4. Sort the droids based on total cost");
+            Console.WriteLine("5. Exit the program");
         }
 
         // Method to get a menu choice

@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Skylar Peters
+// CIS 237
+// 3/22/2021
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,6 +34,7 @@ namespace cis237_assignment4
                 { // index past right subarray max index
                     a[k] = aux[i++];
                 }
+                // If first element is null it wont compare
                 else if ((aux[j] == null) || (aux[j].CompareTo(aux[i]) < 0))
                 {  // compare
                     a[k] = aux[j++];

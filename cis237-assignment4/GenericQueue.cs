@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Skylar Peters
+// CIS 237
+// 3/22/2021
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -39,6 +43,7 @@ namespace cis237_assignment4
             }
         }
 
+        // Method to add to queue
         public void Enqueue(T Data)
         {
             // Make a pointer to the tail called oldTail
@@ -66,6 +71,7 @@ namespace cis237_assignment4
             _size++;
         }
 
+        // Method to remove from queue
         public T Dequeue()
         {
             // If it is empty throw an error
