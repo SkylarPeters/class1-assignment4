@@ -19,7 +19,7 @@ namespace cis237_assignment4
             // Make new array for the collection
             droidCollection = new IDroid[sizeOfCollection];
             // Set length of collection to 0
-            lengthOfCollection = 0;
+            lengthOfCollection = 8;
             // Add droids to the array
             droidCollection[0] = new JanitorDroid("Carbonite", "Red", true, false, true, true, false);
             droidCollection[1] = new ProtocolDroid("Vanadium", "White", 2);
@@ -128,6 +128,43 @@ namespace cis237_assignment4
 
             // Return the completed string
             return returnString;
+        }
+
+        // Method to sort the droids based on what type of droid they are
+        public void CategorySort()
+        {
+            // Create instances of the generic stack class for each type of droid
+            GenericStack<ProtocolDroid> protocolStack = new GenericStack<ProtocolDroid>();
+            GenericStack<UtilityDroid> utilityStack = new GenericStack<UtilityDroid>();
+            GenericStack<JanitorDroid> janitorStack = new GenericStack<JanitorDroid>();
+            GenericStack<AstromechDroid> astromechStack = new GenericStack<AstromechDroid>();
+
+            // Create an instance of the generic queue class
+            GenericQueue<IDroid> droidQueue = new GenericQueue<IDroid>();
+
+            foreach (IDroid droid in droidCollection)
+            {
+                //if (droid.GetType() == typeof(ProtocolDroid))
+                //{
+                //    protocolStack.Push(droid);
+                //}
+
+                //switch (droid.GetType())
+                //{
+                //    case typeof(ProtocolDroid):
+                //        //protocolStack.Push(droid.GetType());
+                //        break;
+                //    case "AstromechDroid":
+
+                //        break;
+                //    case "JanitorDroid":
+
+                //        break;
+                //    case "UtilityDroid":
+
+                //        break;
+                //}
+            }
         }
     }
 }
