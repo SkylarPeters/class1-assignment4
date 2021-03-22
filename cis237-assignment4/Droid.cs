@@ -133,5 +133,24 @@ namespace cis237_assignment4
 
             return colorCost;
         }
+
+        // CompareTo method required by IComparable
+        public int CompareTo(object obj)
+        {
+            if (obj == null)
+            {
+                return 1;
+            }
+
+            Droid otherDroid = obj as Droid;
+            if (otherDroid != null)
+            {
+                return this.totalCost.CompareTo(otherDroid.totalCost);
+            }
+            else
+            {
+                throw new ArgumentException("Object is not a Droid");
+            }
+        }
     }
 }
