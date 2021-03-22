@@ -20,6 +20,15 @@ namespace cis237_assignment4
             droidCollection = new IDroid[sizeOfCollection];
             // Set length of collection to 0
             lengthOfCollection = 0;
+            // Add droids to the array
+            droidCollection[0] = new JanitorDroid("Carbonite", "Red", true, false, true, true, false);
+            droidCollection[1] = new ProtocolDroid("Vanadium", "White", 2);
+            droidCollection[2] = new AstromechDroid("Quadranium", "Blue", true, true, true, true, 6);
+            droidCollection[3] = new UtilityDroid("Carbonite", "White", false, false, false);
+            droidCollection[4] = new UtilityDroid("Vanadium", "Green", true, false, true);
+            droidCollection[5] = new ProtocolDroid("Quadranium", "Blue", 7);
+            droidCollection[6] = new JanitorDroid("Quadranium", "Green", false, true, true, false, true);
+            droidCollection[7] = new AstromechDroid("Tears Of A Jedi", "White", true, false, true, false, 3);
         }
 
         // The Add method for a Protocol Droid. The parameters passed in match those needed for a protocol droid
