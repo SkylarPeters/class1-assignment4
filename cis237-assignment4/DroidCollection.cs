@@ -166,5 +166,11 @@ namespace cis237_assignment4
                 //}
             }
         }
+
+        // Method to sort the droids based on total cost
+        public void TotalCostSort()
+        {
+            MergeSort.Sort(droidCollection);
+        }
     }
 }
