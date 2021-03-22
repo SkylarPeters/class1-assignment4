@@ -145,7 +145,9 @@ namespace cis237_assignment4
             Droid otherDroid = obj as Droid;
             if (otherDroid != null)
             {
-                return this.totalCost.CompareTo(otherDroid.totalCost);
+                otherDroid.CalculateTotalCost();
+                this.CalculateTotalCost();
+                return totalCost.CompareTo(otherDroid.totalCost);
             }
             else
             {

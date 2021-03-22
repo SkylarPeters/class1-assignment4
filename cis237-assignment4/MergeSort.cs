@@ -30,7 +30,7 @@ namespace cis237_assignment4
                 { // index past right subarray max index
                     a[k] = aux[i++];
                 }
-                else if (aux[j].CompareTo(aux[i]) < 0)
+                else if ((aux[j] == null) || (aux[j].CompareTo(aux[i]) < 0))
                 {  // compare
                     a[k] = aux[j++];
                 }

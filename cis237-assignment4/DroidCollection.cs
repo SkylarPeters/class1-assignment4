@@ -31,6 +31,8 @@ namespace cis237_assignment4
             droidCollection[7] = new AstromechDroid("Tears Of A Jedi", "White", true, false, true, false, 3);
         }
 
+        public DroidCollection() { }
+
         // The Add method for a Protocol Droid. The parameters passed in match those needed for a protocol droid
         public bool Add(string Material, string Color, int NumberOfLanguages)
         {
@@ -170,7 +172,7 @@ namespace cis237_assignment4
         // Method to sort the droids based on total cost
         public void TotalCostSort()
         {
-            MergeSort.Sort(droidCollection);
+            MergeSort.Sort(this.droidCollection);
         }
     }
 }
